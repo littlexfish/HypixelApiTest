@@ -1,5 +1,8 @@
 package org.lf.bazaar;
 
+/**
+ * Some of item in bazaar will not add in instantly
+ */
 @SuppressWarnings("unused")
 public enum ItemID {
 

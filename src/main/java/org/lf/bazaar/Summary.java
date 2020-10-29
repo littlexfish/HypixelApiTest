@@ -19,6 +19,10 @@ public class Summary {
     private final List<Data> content;
     private final Type T;
 
+    /**
+     * @param t - A summary type, buy or sell.
+     * @param ja - {@link com.google.gson.JsonArray}
+     */
     public Summary(Type t, JsonArray ja) {
         content = new ArrayList<>(ja.size());
         T = t;
@@ -28,6 +32,9 @@ public class Summary {
         }
     }
 
+    /**
+     * @return {@link org.lf.bazaar.Summary.Type}
+     */
     public Type getSummaryType() {
         return T;
     }
@@ -106,6 +113,9 @@ public class Summary {
         return content.get(index).orders;
     }
 
+    /**
+     * Data of summary.
+     */
     private class Data {
         public final int amount;
         public final double pricePerUnit;

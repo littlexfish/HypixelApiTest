@@ -3,6 +3,11 @@ package org.lf.bazaar;
 import com.google.gson.JsonObject;
 import org.lf.api.reply.BazaarReply;
 import org.lf.api.reply.ReplyType;
+
+/**
+ * You can use this class to connect to Hypixel skyblock with api,
+ * just use {@link #getProduct()} to get product what you want to get.
+ */
 @SuppressWarnings("unused")
 public class BazaarDecode {
 
@@ -11,6 +16,9 @@ public class BazaarDecode {
     private final boolean success;
     private final ProductElement pe;
 
+    /**
+     * @param br - {@link org.lf.api.reply.BazaarReply}
+     */
     public BazaarDecode(BazaarReply br) {
         ReplyResult = br.getResult();
         if(ReplyResult == null) {
@@ -23,6 +31,11 @@ public class BazaarDecode {
         success = ReplyResult.get("success").getAsBoolean();
         pe = new ProductElement(ReplyResult.get("product_info").getAsJsonObject());
     }
+
+    /**
+     * Get product element to get information of the product.
+     * @return {@link org.lf.bazaar.ProductElement}
+     */
     public ProductElement getProduct() {
         if(hasProduct) {
             return pe;
@@ -31,13 +44,24 @@ public class BazaarDecode {
             throw new IllegalStateException("No product get");
         }
     }
+
+    /**
+     * @return a boolean called success in json of result.
+     */
     public boolean getSuccess() {
         return success;
     }
+
+    /**
+     * @return all result as {@link com.google.gson.JsonObject}
+     */
     public JsonObject getReplyResult() {
         return ReplyResult;
     }
 
+    /**
+     * @return all json content as {@link java.lang.String}
+     */
     @Override
     public String toString() {
         return ReplyResult.toString();
