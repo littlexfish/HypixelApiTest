@@ -6,26 +6,26 @@ import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@SuppressWarnings("unused")
 public class ProductElement {
 
-    private String Product_ID;
-    private Summary buy;
-    private Summary sell;
+    private final String Product_ID;
+    private final Summary buy;
+    private final Summary sell;
     /**
      * Data keyword in map below:<br>
      * "productID", "buyPrice", "buyVolume", "buyMovingWeek", "buyOrders",
      * "sellPrice", "sellVolume", "sellMovingWeek", "sellOrders"<br>
      * You can use these keyword to find value in map.
      */
-    private QuickData Quick_Status;
+    private final QuickData Quick_Status;
     /**
      * Data keyword in map below:<br>
      * "productID", "timpstamp", "nowBuyVolume", "nowSellVolume", "buyCoins",
      * "buyVolume", "buys", "sellCoins", "sellVolume", "sells"<br>
      * You can use these keyword to find value in map.
      */
-    private List<WeekData> Week_Historic;
+    private final List<WeekData> Week_Historic;
 
     public ProductElement(JsonObject info) {
         Product_ID = info.get("product_id").getAsString();

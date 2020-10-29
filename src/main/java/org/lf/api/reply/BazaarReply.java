@@ -3,18 +3,17 @@ package org.lf.api.reply;
 import org.lf.bazaar.ItemID;
 
 import java.io.IOException;
-import java.lang.annotation.Documented;
-
+@SuppressWarnings("unused")
 public class BazaarReply extends AbstractReply {
 
-    private boolean hasProduct;
+    private final boolean hasProduct;
     private String ProductID;
 
     /**
      * @deprecated
      * If you still use this constructor, you may deal with json from api by yourselves(yourself).
-     * @param apiKey
-     * @throws IOException
+     * @param apiKey - Using /api in hypixel to use this class.
+     * @throws IOException if error occured
      */
     @Deprecated
     public BazaarReply(String apiKey) throws IOException {

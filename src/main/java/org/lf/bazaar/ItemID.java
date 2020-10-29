@@ -1,5 +1,6 @@
 package org.lf.bazaar;
 
+@SuppressWarnings("unused")
 public enum ItemID {
 
     BROWN_MUSHROOM,
@@ -201,7 +202,7 @@ public enum ItemID {
     ENCHANTED_DIAMOND,
     ;
 
-    private String ID;
+    private final String ID;
     ItemID() {
         ID = toString();
     }

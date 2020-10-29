@@ -1,7 +1,7 @@
 package org.lf.bazaar;
 
 import org.lf.JSONType;
-
+@SuppressWarnings("unused")
 public class ResponceKey {
 
     public enum Responce {
@@ -9,7 +9,7 @@ public class ResponceKey {
         PRODUCT_INFO(JSONType.ELEMENT),
         ;
 
-        private JSONType Type;
+        private final JSONType Type;
         Responce(JSONType type) {
             Type = type;
         }
@@ -26,7 +26,7 @@ public class ResponceKey {
         WEEK_HISTORIC(JSONType.LIST),
         ;
 
-        private JSONType Type;
+        private final JSONType Type;
         ProductInfo(JSONType type) {
             Type = type;
         }
@@ -42,7 +42,7 @@ public class ResponceKey {
         ORDERS(JSONType.VALUE),
         ;
 
-        private JSONType Type;
+        private final JSONType Type;
         Summary(JSONType type) {
             Type = type;
         }
@@ -63,7 +63,7 @@ public class ResponceKey {
         SELL_ORDERS(JSONType.VALUE),
         ;
 
-        private JSONType Type;
+        private final JSONType Type;
         QuickStatus(JSONType type) {
             Type = type;
         }
@@ -85,7 +85,7 @@ public class ResponceKey {
         SELLS(JSONType.VALUE),
         ;
 
-        private JSONType Type;
+        private final JSONType Type;
         WeekHistoric(JSONType type) {
             Type = type;
         }

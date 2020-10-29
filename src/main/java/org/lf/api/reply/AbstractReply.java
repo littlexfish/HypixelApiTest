@@ -1,6 +1,5 @@
 package org.lf.api.reply;
 
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonStreamParser;
 import org.apache.http.HttpResponse;
@@ -13,14 +12,15 @@ import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+@SuppressWarnings("unused")
 public abstract class AbstractReply {
 
-    private ReplyType rt;
+    private final ReplyType rt;
     private JsonObject result;
-    private URL APISite;
-    private CloseableHttpClient web;
+    private final URL APISite;
+    private final CloseableHttpClient web;
     private HttpResponse hr;
-    private Object lock;
+    private final Object lock;
 
     public AbstractReply(String apiAddress, ReplyType rt) throws IOException {
         this.rt = rt;

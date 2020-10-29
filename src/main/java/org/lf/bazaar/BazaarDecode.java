@@ -1,16 +1,15 @@
 package org.lf.bazaar;
 
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import org.lf.api.reply.BazaarReply;
 import org.lf.api.reply.ReplyType;
-
+@SuppressWarnings("unused")
 public class BazaarDecode {
 
-    private JsonObject ReplyResult;
-    private boolean hasProduct;
-    private boolean success;
-    private ProductElement pe;
+    private final JsonObject ReplyResult;
+    private final boolean hasProduct;
+    private final boolean success;
+    private final ProductElement pe;
 
     public BazaarDecode(BazaarReply br) {
         ReplyResult = br.getResult();
@@ -32,7 +31,9 @@ public class BazaarDecode {
             throw new IllegalStateException("No product get");
         }
     }
-
+    public boolean getSuccess() {
+        return success;
+    }
     public JsonObject getReplyResult() {
         return ReplyResult;
     }
