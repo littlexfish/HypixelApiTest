@@ -1,4 +1,4 @@
-package main;
+package org.lf;
 
 public class Main {
 
