@@ -1,6 +1,7 @@
 package org.lf.api.reply;
 
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonStreamParser;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -15,7 +16,7 @@ import java.net.URL;
 public abstract class AbstractReply {
 
     private ReplyType rt;
-    private JsonElement result;
+    private JsonObject result;
     private URL APISite;
     private CloseableHttpClient web;
     private HttpResponse hr;
@@ -32,7 +33,7 @@ public abstract class AbstractReply {
         if(hr != null) {
             synchronized(lock) {
                 hr = web.execute(new HttpGet((APISite.toURI())));
-                result = new JsonStreamParser(new InputStreamReader(hr.getEntity().getContent())).next();
+                result = new JsonStreamParser(new InputStreamReader(hr.getEntity().getContent())).next().getAsJsonObject();
             }
         }
         else {
@@ -43,10 +44,10 @@ public abstract class AbstractReply {
     public void reExecute() throws URISyntaxException, IOException {
         synchronized(lock) {
             hr = web.execute(new HttpGet((APISite.toURI())));
-            result = new JsonStreamParser(new InputStreamReader(hr.getEntity().getContent())).next();
+            result = new JsonStreamParser(new InputStreamReader(hr.getEntity().getContent())).next().getAsJsonObject();
         }
     }
-    public JsonElement getResult() {
+    public JsonObject getResult() {
         synchronized(lock) {
             return result;
         }
