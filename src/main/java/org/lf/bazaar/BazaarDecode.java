@@ -9,7 +9,6 @@ import org.lf.exception.GetFailureException;
  * You can use this class to connect to Hypixel skyblock with api,
  * just use {@link #getProduct()} to get product what you want to get.
  */
-@SuppressWarnings("unused")
 public class BazaarDecode {
 
     private final JsonObject ReplyResult;

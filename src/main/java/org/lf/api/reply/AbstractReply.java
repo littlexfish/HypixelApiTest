@@ -12,7 +12,10 @@ import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-@SuppressWarnings("unused")
+/**
+ * A abstract class that extents by other reply class,
+ * and get json from Hypixel api.
+ */
 public abstract class AbstractReply {
 
     private final ReplyType rt;
@@ -29,33 +32,35 @@ public abstract class AbstractReply {
         lock = new Object();
 
     }
+
+    /**
+     * Get json from Hypixel api.
+     * @return {@link org.lf.api.reply.AbstractReply} that can put into decode class directly.
+     * @throws URISyntaxException if uri syntax error, but usually won't occurred.
+     * @throws IOException if get json error.
+     */
     public AbstractReply execute() throws URISyntaxException, IOException {
-        if(hr != null) {
-            synchronized(lock) {
-                hr = web.execute(new HttpGet((APISite.toURI())));
-                result = new JsonStreamParser(new InputStreamReader(hr.getEntity().getContent())).next().getAsJsonObject();
-            }
-        }
-        else {
-            throw new IllegalStateException("Execute already. If need to re-execute, please use \"reExecute()\" method.");
-        }
-        return this;
-    }
-    public void reExecute() throws URISyntaxException, IOException {
         synchronized(lock) {
             hr = web.execute(new HttpGet((APISite.toURI())));
             result = new JsonStreamParser(new InputStreamReader(hr.getEntity().getContent())).next().getAsJsonObject();
+            return this;
         }
     }
+
+    /**
+     * Get json object that get from Hypixel api.
+     * @return {@link com.google.gson.JsonObject}
+     */
     public JsonObject getResult() {
         synchronized(lock) {
             return result;
         }
     }
+
+    /**
+     * @return {@link org.lf.api.reply.ReplyType}
+     */
     public ReplyType getReplytype() {
         return rt;
     }
-    //https://hypixel-skyblock.fandom.com/wiki/SkyBlock_API
-
-
 }

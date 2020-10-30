@@ -7,7 +7,6 @@ import java.io.IOException;
 /**
  * A class link to Hypixel skyblock Bazaar api.
  */
-@SuppressWarnings("unused")
 public class BazaarReply extends AbstractReply {
 
     private final boolean hasProduct;
@@ -16,8 +15,8 @@ public class BazaarReply extends AbstractReply {
     /**
      * @deprecated
      * If you still use this constructor, you may deal with json from api by yourselves(yourself).
-     * @param apiKey - Using /api in hypixel to use this class.
-     * @throws IOException if error occured.
+     * @param apiKey - Using /api in Hypixel to use this class.
+     * @throws IOException if get json error.
      */
     @Deprecated
     public BazaarReply(String apiKey) throws IOException {
@@ -27,9 +26,9 @@ public class BazaarReply extends AbstractReply {
 
     /**
      * Use {@link sun.net.www.http.HttpClient} to link to hypixel api.
-     * @param apiKey - Using /api in hypixel to use this class.
+     * @param apiKey - Using /api in Hypixel to use this class.
      * @param productID - The product id in skyblock Bazaar.
-     * @throws IOException if error occured.
+     * @throws IOException if get json error.
      * @see {@link org.lf.bazaar.ItemID}
      */
     public BazaarReply(String apiKey, ItemID productID) throws IOException {

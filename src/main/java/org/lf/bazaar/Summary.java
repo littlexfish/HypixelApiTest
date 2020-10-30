@@ -6,7 +6,6 @@ import com.google.gson.JsonObject;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-@SuppressWarnings("unused")
 public class Summary {
 
     /**
@@ -40,7 +39,7 @@ public class Summary {
     }
 
     /**
-     * @return {@link Map}
+     * @return {@link org.lf.bazaar.Summary.Data}
      * @see #content
      */
     public Data getDataFromIndex(int index) {
@@ -116,7 +115,7 @@ public class Summary {
     /**
      * Data of summary.
      */
-    private class Data {
+    public class Data {
         public final int amount;
         public final double pricePerUnit;
         public final int orders;

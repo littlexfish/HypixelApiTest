@@ -35,15 +35,15 @@ public enum ItemID {
     //Red Mushroom
     RED_MUSHROOM,
     ENCHANTED_RED_MUSHROOM,
-    HUGE_MUSHROOM_1,
-    ENCHANTED_HUGE_MUSHROOM_1,
+    RED_MUSHROOM_BLOCK("HUGE_MUSHROOM_2"),
+    ENCHANTED_RED_MUSHROOM_BLOCK("ENCHANTED_HUGE_MUSHROOM_2"),
     //Brown Mushroom
     BROWN_MUSHROOM,
     ENCHANTED_BROWN_MUSHROOM,
-    HUGE_MUSHROOM_2,
-    ENCHANTED_HUGE_MUSHROOM_2,
+    BROWN_MUSHROOM_BLOCK("HUGE_MUSHROOM_1"),
+    ENCHANTED_BROWN_MUSHROOM_BLOCK("ENCHANTED_HUGE_MUSHROOM_1"),
     //Cocoa Beans
-    INK_SACK3("INK_SACK:3"),
+    COCOA_BEANS("INK_SACK:3"),
     ENCHANTED_COCOA,
     ENCHANTED_COOKIE,
     //Cactus
@@ -85,8 +85,8 @@ public enum ItemID {
     ENCHANTED_RABBIT_FOOT,
     ENCHANTED_RABBIT_HIDE,
     //Nether Warts
-    NETHER_STALK,
-    ENCHANTED_NETHER_STALK,
+    NETHER_WART("NETHER_STALK"),
+    ENCHANTED_NETHER_WART("ENCHANTED_NETHER_STALK"),
 
     /* Mining */
     //Cobblestone
@@ -110,7 +110,7 @@ public enum ItemID {
     ENCHANTED_DIAMOND,
     ENCHANTED_DIAMOND_BLOCK,
     //Lapis
-    INK_SACK4("INK_SACK:4"),
+    LAPIS_LAZULI("INK_SACK:4"),
     ENCHANTED_LAPIS_LAZULI,
     ENCHANTED_LAPIS_LAZULI_BLOCK,
     //Emerald
@@ -162,7 +162,7 @@ public enum ItemID {
     //Bone
     BONE,
     ENCHANTED_BONE,
-
+    ENCHANTED_BONE_BLOCK,
     //String
     STRING,
     ENCHANTED_STRING,
@@ -171,7 +171,7 @@ public enum ItemID {
     ENCHANTED_SPIDER_EYE,
     ENCHANTED_FERMENTED_SPIDER_EYE,
     //GunPowder
-    SULPHUR,
+    GUNPOWDER("SULPHUR"),
     ENCHANTED_GUNPOWDER,
     ENCHANTED_FIREWORK_ROCKET,
     //Ender Pearl
@@ -195,36 +195,36 @@ public enum ItemID {
 
     /* Woods & Fishes */
     //Oak
-    LOG,
+    OAK_WOOD("LOG"),
     ENCHANTED_OAK_LOG,
     //Spruce
-    LOG1("LOG:1"),
+    SPRUCE_WOOD("LOG:1"),
     ENCHANTED_SPRUCE_LOG,
     //Birch
-    LOG2("LOG:2"),
+    BIRCH_WOOD("LOG:2"),
     ENCHANTED_BIRCH_LOG,
     //Dark Oak
-    LOG_21("LOG_2:1"),
+    DARK_OAK_WOOD("LOG_2:1"),
     ENCHANTED_DARK_OAK_LOG,
     //Acacia
-    LOG_2,
+    ACACIA_WOOD("LOG_2"),
     ENCHANTED_ACACIA_LOG,
     //Jungle
-    LOG3("LOG:3"),
+    JUNGLE_WOOD("LOG:3"),
     ENCHANTED_JUNGLE_LOG,
     //Raw Fish
     RAW_FISH,
     ENCHANTED_RAW_FISH,
     ENCHANTED_COOKED_FISH,
     //Salmon
-    RAW_FISH1("RAW_FISH:1"),
+    RAW_SALMON("RAW_FISH:1"),
     ENCHANTED_RAW_SALMON,
     ENCHANTED_COOKED_SALMON,
     //Clownfish
-    RAW_FISH2("RAW_FISH:2"),
+    CLOWNFISH("RAW_FISH:2"),
     ENCHANTED_CLOWNFISH,
     //Pufferfish
-    RAW_FISH3("RAW_FISH:3"),
+    PUFFERFISH("RAW_FISH:3"),
     ENCHANTED_PUFFERFISH,
     //Prismarine Shard
     PRISMARINE_SHARD,
@@ -246,24 +246,24 @@ public enum ItemID {
     ENCHANTED_SPONGE,
     ENCHANTED_WET_SPONGE,
     //Baits
-
-
-
-
-
-
-
-
-
-
-
+    CARROT_BAIT,
+    MINNOW_BAIT,
+    FISH_BAIT,
+    LIGHT_BAIT,
+    DARK_BAIT,
+    SPOOKY_BAIT,
+    SPIKED_BAIT,
+    BLESSED_BAIT,
+    ICE_BAIT,
+    WHALE_BAIT,
+    SHARK_BAIT,
     //Fishing Festival Items
-
-
-
-
-
-
+    NURSE_SHARK_TOOTH,
+    BLUE_SHARK_TOOTH,
+    TIGER_SHARK_TOOTH,
+    GREAT_WHITE_SHARK_TOOTH,
+    SHARK_FIN,
+    ENCHANTED_SHARK_FIN,
     /* Oddities */
     //Revenant Flesh
     REVENANT_FLESH,
@@ -276,7 +276,7 @@ public enum ItemID {
     GOLDEN_TOOTH,
     //Hot Potato Book
     HOT_POTATO_BOOK,
-
+    FUMING_POTATO_BOOK,
     //Compactor
     COMPACTOR,
     SUPER_COMPACTOR_3000,
@@ -290,7 +290,7 @@ public enum ItemID {
     YOUNG_FRAGMENT,
     WISE_FRAGMENT,
     SUPERIOR_FRAGMENT,
-
+    HOLY_FRAGMENT,
     //Enchanted Redstone Lamp
     ENCHANTED_REDSTONE_LAMP,
     //Fuels
@@ -298,7 +298,7 @@ public enum ItemID {
     HAMSTER_WHEEL,
     FOUL_FLESH,
     CATALYST,
-
+    HYPER_CATALYST,
     //Candies
     GREEN_CANDY,
     PURPLE_CANDY,
@@ -307,14 +307,16 @@ public enum ItemID {
     GREEN_GIFT,
     RED_GIFT,
     //Mythological
-
-
-
-
+    GRIFFIN_FEATHER,
+    DAEDALUS_STICK,
+    ANCIENT_CLAW,
+    ENCHANTED_ANCIENT_CLAW,
     //Refined Mineral
-
+    REFINED_MINERAL,
+    //Recombobulator 3000
+    RECOMBOBULATOR_3000,
     //Booster Cookie
-
+    BOOSTER_COOKIE,
     //Stock of Stonks
     STOCK_OF_STONKS,
     ;

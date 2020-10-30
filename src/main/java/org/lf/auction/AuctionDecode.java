@@ -9,6 +9,9 @@ import org.lf.exception.GetFailureException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A class can deal with json from {@link org.lf.api.reply.AuctionReply}.
+ */
 public class AuctionDecode {
 
     private JsonObject ReplyResult;
@@ -16,6 +19,11 @@ public class AuctionDecode {
     private String cause;
     private List<AuctionElement> auctions;
 
+    /**
+     * Don't forget run {@link org.lf.api.reply.AuctionReply#execute()} before input.
+     * @param ar - {@link org.lf.api.reply.AuctionReply}
+     * @throws GetFailureException
+     */
     public AuctionDecode(AuctionReply ar) throws GetFailureException {
         ReplyResult = ar.getResult();
         if(ReplyResult == null) {
@@ -38,21 +46,38 @@ public class AuctionDecode {
             auctions.add(new AuctionElement(ja.get(i).getAsJsonObject()));
         }
     }
-
+    /**
+     * Get auction element to get information of the auction.
+     * @return {@link org.lf.bazaar.ProductElement}
+     */
     public List<AuctionElement> getAuctions() {
         return auctions;
     }
-
+    /**
+     * Get auction element to get information of the auction.
+     * @param index - index.
+     * @return {@link org.lf.bazaar.ProductElement}
+     */
     public AuctionElement getAuction(int index) {
         return auctions.get(index);
     }
-
+    /**
+     * @return a boolean called success in json of result.
+     */
     public boolean getSuccess() {
         return success;
     }
-
+    /**
+     * @return cause if get error, or null if nothing happened.
+     */
     public String getCause() {
         return cause;
     }
-
+    /**
+     * @return all json content as {@link java.lang.String}
+     */
+    @Override
+    public String toString() {
+        return ReplyResult.toString();
+    }
 }

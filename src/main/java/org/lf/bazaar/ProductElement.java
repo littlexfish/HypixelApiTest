@@ -9,14 +9,13 @@ import java.util.List;
 /**
  * This class will be link to a product.
  */
-@SuppressWarnings("unused")
 public class ProductElement {
 
-    private final String Product_ID;
-    private final Summary buy;
-    private final Summary sell;
-    private final QuickData Quick_Status;
-    private final List<WeekData> Week_Historic;
+    public final String Product_ID;
+    public final Summary buy;
+    public final Summary sell;
+    public final QuickData Quick_Status;
+    public final List<WeekData> Week_Historic;
 
     /**
      * @param info - {@link com.google.gson.JsonObject}
@@ -42,54 +41,9 @@ public class ProductElement {
     }
 
     /**
-     * @return Product_ID.
-     */
-    public String getProduct_ID() {
-        return Product_ID;
-    }
-
-    /**
-     *
-     * @return buy_summary.
-     */
-    public Summary getBuy() {
-        return buy;
-    }
-
-    /**
-     *
-     * @return sell_summary
-     */
-    public Summary getSell() {
-        return sell;
-    }
-
-    /**
-     * @return Quick_Status.
-     */
-    public QuickData getQuickStatus() {
-        return Quick_Status;
-    }
-
-    /**
-     * @param index - index of week_historic.
-     * @return A week_historic.
-     */
-    public WeekData getWeekHistoric(int index) {
-        return Week_Historic.get(index);
-    }
-
-    /**
-     * @return All of week_historic
-     */
-    public List<WeekData> getAllWeekHistoric() {
-        return Week_Historic;
-    }
-
-    /**
      * Quick_Status
      */
-    private class QuickData {
+    public class QuickData {
         public final String productId;
         public final double buyPrice;
         public final int buyVolume;
@@ -115,7 +69,7 @@ public class ProductElement {
     /**
      * Week_Historic
      */
-    private class WeekData {
+    public class WeekData {
         public final String productId;
         public final int timestamp;
         public final int nowBuyVolume;
