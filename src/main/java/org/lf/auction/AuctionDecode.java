@@ -22,7 +22,7 @@ public class AuctionDecode {
     /**
      * Don't forget run {@link org.lf.api.reply.AuctionReply#execute()} before input.
      * @param ar - {@link org.lf.api.reply.AuctionReply}
-     * @throws GetFailureException
+     * @throws GetFailureException if success is false.
      */
     public AuctionDecode(AuctionReply ar) throws GetFailureException {
         ReplyResult = ar.getResult();

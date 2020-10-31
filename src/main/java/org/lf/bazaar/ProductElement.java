@@ -11,10 +11,29 @@ import java.util.List;
  */
 public class ProductElement {
 
+    /**
+     * Product id.
+     */
     public final String Product_ID;
+    /**
+     * Buy summary.
+     * @see {@link org.lf.bazaar.Summary}
+     */
     public final Summary buy;
+    /**
+     * Sell summary.
+     * @see {@link org.lf.bazaar.Summary}
+     */
     public final Summary sell;
+    /**
+     * Quick status.
+     * @see {@link org.lf.bazaar.ProductElement.QuickData}
+     */
     public final QuickData Quick_Status;
+    /**
+     * Week historic.
+     * @see {@link org.lf.bazaar.ProductElement.WeekData}
+     */
     public final List<WeekData> Week_Historic;
 
     /**

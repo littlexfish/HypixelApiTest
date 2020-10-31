@@ -1,6 +1,7 @@
 package org.lf.bazaar;
 
 /**
+ * All item in bazaar of Hypixel skyblock.<br>
  * Some of item in bazaar will not add in instantly
  */
 @SuppressWarnings("unused")

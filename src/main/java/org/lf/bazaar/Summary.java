@@ -6,10 +6,14 @@ import com.google.gson.JsonObject;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+/**
+ * This class will store all of summary data from json.
+ */
 public class Summary {
 
     /**
-     * Summary Type.
+     * Summary Type. BUY or SELL.
      */
     public enum Type {
         BUY, SELL
@@ -19,7 +23,7 @@ public class Summary {
     private final Type T;
 
     /**
-     * @param t - A summary type, buy or sell.
+     * @param t - A summary type, BUY or SELL.
      * @param ja - {@link com.google.gson.JsonArray}
      */
     public Summary(Type t, JsonArray ja) {
@@ -40,7 +44,6 @@ public class Summary {
 
     /**
      * @return {@link org.lf.bazaar.Summary.Data}
-     * @see #content
      */
     public Data getDataFromIndex(int index) {
         return content.get(index);
@@ -49,7 +52,7 @@ public class Summary {
     /**
      * Get all data.
      * @return {@link List}
-     * @see #content
+     * @see #getDataFromIndex(int)
      */
     public List<Data> getContent() {
         return content;
@@ -87,8 +90,8 @@ public class Summary {
 
     /**
      * Get an amount of data from index.
-     * @param index - index of amount
-     * @return int
+     * @param index - index of amount.
+     * @return amount.
      */
     public int getAmount(int index) {
         return content.get(index).amount;
@@ -96,8 +99,8 @@ public class Summary {
 
     /**
      * Get an pricePerUnit of data from index.
-     * @param index - index of pricePerUnit
-     * @return double
+     * @param index - index of pricePerUnit.
+     * @return pricePerUnit.
      */
     public double getPricePerUnit(int index) {
         return content.get(index).pricePerUnit;
@@ -105,8 +108,8 @@ public class Summary {
 
     /**
      * Get an orders of data from index.
-     * @param index - index of orders
-     * @return int
+     * @param index - index of orders.
+     * @return orders.
      */
     public int getOrders(int index) {
         return content.get(index).orders;

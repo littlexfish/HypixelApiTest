@@ -19,7 +19,7 @@ public class BazaarDecode {
 
     /**
      * @param br - {@link org.lf.api.reply.BazaarReply}
-     * @throws GetFailureException if success is false;
+     * @throws GetFailureException if success is false.
      */
     public BazaarDecode(BazaarReply br) throws GetFailureException {
         ReplyResult = br.getResult();
@@ -55,7 +55,7 @@ public class BazaarDecode {
     }
 
     /**
-     * @return a boolean called success in json of result.
+     * @return false if get from api error, and true if success.
      */
     public boolean getSuccess() {
         return success;
