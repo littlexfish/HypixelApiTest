@@ -12,5 +12,5 @@ I add some libraries and compile together, the libraries below:
 
 # Document
     BazaarDecode bazaarDecode = new BazaarDecode(new BazaarReply(String apikey, ItemID itemid).execute());
-ItemID is a enum in the library that you can get the item in Bazaar.
+ItemID is a enum in the library that you can get the item in Bazaar.  
 You can get product through <code>bazaarDecode</code> and do any you want to do like post to anywhere or save to other files etc.
