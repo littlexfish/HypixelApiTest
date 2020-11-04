@@ -171,7 +171,7 @@ public enum ItemID {
     SPIDER_EYE,
     ENCHANTED_SPIDER_EYE,
     ENCHANTED_FERMENTED_SPIDER_EYE,
-    //GunPowder
+    //Gunpowder
     GUNPOWDER("SULPHUR"),
     ENCHANTED_GUNPOWDER,
     ENCHANTED_FIREWORK_ROCKET,
@@ -265,6 +265,7 @@ public enum ItemID {
     GREAT_WHITE_SHARK_TOOTH,
     SHARK_FIN,
     ENCHANTED_SHARK_FIN,
+
     /* Oddities */
     //Revenant Flesh
     REVENANT_FLESH,

@@ -13,24 +13,24 @@ public class BazaarReply extends AbstractReply {
     private ItemID ProductID;
 
     /**
-     * @deprecated
-     * If you still use this constructor, you may deal with json from api by yourselves(yourself).
+     * Hypixel recommended use this way to get data.<br>
+     * Use {@link sun.net.www.http.HttpClient} to link to hypixel api.
      * @param apiKey - Using /api in Hypixel to use this class.
      * @throws IOException if get json error.
      */
-    @Deprecated
     public BazaarReply(String apiKey) throws IOException {
-        super(" https://api.hypixel.net/skyblock/bazaar/product?key=" + apiKey, ReplyType.BAZAAR);
+        super(" https://api.hypixel.net/skyblock/bazaar?key=" + apiKey, ReplyType.BAZAAR);
         hasProduct = false;
     }
 
     /**
-     * Use {@link sun.net.www.http.HttpClient} to link to hypixel api.
+     * @deprecated This way to get data will soon be remove by Hypixel.
      * @param apiKey - Using /api in Hypixel to use this class.
      * @param productID - The product id in skyblock Bazaar.
      * @throws IOException if get json error.
      * @see {@link org.lf.bazaar.ItemID}
      */
+    @Deprecated
     public BazaarReply(String apiKey, ItemID productID) throws IOException {
         super(" https://api.hypixel.net/skyblock/bazaar/product?key=" + apiKey + "&productId=" + productID.getID(), ReplyType.BAZAAR);
         hasProduct = true;

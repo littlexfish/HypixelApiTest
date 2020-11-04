@@ -15,7 +15,10 @@ public class BazaarDecode {
     private final boolean hasProduct;
     private final boolean success;
     private final String cause;
-    private final ProductElement pe;
+    private ProductElement pe;
+
+    private long lastUpdated;
+    private Products pes;
 
     /**
      * @param br - {@link org.lf.api.reply.BazaarReply}
@@ -38,19 +41,42 @@ public class BazaarDecode {
         else {
             cause = null;
         }
-        pe = new ProductElement(ReplyResult.get("product_info").getAsJsonObject());
+        if(hasProduct) {
+            pe = new ProductElement(ReplyResult.get("product_info").getAsJsonObject());
+            lastUpdated = -1;
+        }
+        else {
+            pes = new Products(ReplyResult.get("products").getAsJsonObject());
+            lastUpdated = ReplyResult.get("lastUpdated").getAsInt();
+        }
     }
 
     /**
+     * @deprecated This way to get data will soon be remove by Hypixel.
      * Get product element to get information of the product.
      * @return {@link org.lf.bazaar.ProductElement}
+     * @see {@link org.lf.api.reply.BazaarReply#BazaarReply(String, ItemID)}
      */
     public ProductElement getProduct() {
         if(hasProduct) {
             return pe;
         }
         else {
-            throw new IllegalStateException("No product get");
+            throw new IllegalStateException("Please use getProducts()");
+        }
+    }
+
+    /**
+     * Hypixel recommended use this way to get data.
+     * @return {@link org.lf.bazaar.Products}
+     * @see {@link org.lf.api.reply.BazaarReply#BazaarReply(String)}
+     */
+    public Products getProducts() {
+        if(!hasProduct) {
+            return pes;
+        }
+        else {
+            throw new IllegalStateException("Please use getProduct().");
         }
     }
 

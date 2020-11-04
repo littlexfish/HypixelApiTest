@@ -2,6 +2,7 @@ package org.lf.bazaar;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,8 @@ public class ProductElement {
      */
     public final QuickData Quick_Status;
     /**
-     * Week historic.
+     * Week historic.<br>
+     * If you use {@link org.lf.api.reply.BazaarReply#BazaarReply(String)}, will return <code>null</code>
      * @see {@link org.lf.bazaar.ProductElement.WeekData}
      */
     public final List<WeekData> Week_Historic;
@@ -48,14 +50,19 @@ public class ProductElement {
                 qjo.get("buyVolume").getAsInt(), qjo.get("buyMovingWeek").getAsInt(), qjo.get("buyOrders").getAsInt(),
                 qjo.get("sellPrice").getAsDouble(), qjo.get("sellVolume").getAsInt(), qjo.get("sellMovingWeek").getAsInt(),
                 qjo.get("sellOrders").getAsInt());
-        JsonArray ja = info.get("week_historic").getAsJsonArray();
-        Week_Historic = new ArrayList<>(ja.size());
-        for(int i = 0;i < ja.size();i++) {
-            JsonObject jo = ja.get(i).getAsJsonObject();
-            Week_Historic.add(new WeekData(jo.get("productId").getAsString(), jo.get("timestamp").getAsInt(),
-                    jo.get("nowBuyVolume").getAsInt(), jo.get("nowSellVolume").getAsInt(),
-                    jo.get("buyCoins").getAsDouble(), jo.get("buyVolume").getAsInt(), jo.get("buys").getAsInt(),
-                    jo.get("sellCoins").getAsDouble(), jo.get("sellVolume").getAsInt(), jo.get("sells").getAsInt()));
+        if(info.has("week_historic")) {
+            JsonArray ja = info.get("week_historic").getAsJsonArray();
+            Week_Historic = new ArrayList<>(ja.size());
+            for(int i = 0;i < ja.size();i++) {
+                JsonObject jo = ja.get(i).getAsJsonObject();
+                Week_Historic.add(new WeekData(jo.get("productId").getAsString(), jo.get("timestamp").getAsInt(),
+                        jo.get("nowBuyVolume").getAsInt(), jo.get("nowSellVolume").getAsInt(),
+                        jo.get("buyCoins").getAsDouble(), jo.get("buyVolume").getAsInt(), jo.get("buys").getAsInt(),
+                        jo.get("sellCoins").getAsDouble(), jo.get("sellVolume").getAsInt(), jo.get("sells").getAsInt()));
+            }
+        }
+        else {
+            Week_Historic = null;
         }
     }
 

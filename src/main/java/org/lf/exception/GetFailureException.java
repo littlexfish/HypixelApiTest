@@ -1,6 +1,6 @@
 package org.lf.exception;
 
-public class GetFailureException extends Exception {
+public class GetFailureException extends RuntimeException {
 
     public GetFailureException() {
         super();

@@ -98,6 +98,13 @@ public class Summary {
     }
 
     /**
+     * @return amount of data.
+     */
+    public int size() {
+        return content.size();
+    }
+
+    /**
      * Get an pricePerUnit of data from index.
      * @param index - index of pricePerUnit.
      * @return pricePerUnit.
