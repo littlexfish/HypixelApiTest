@@ -301,9 +301,14 @@ public enum ItemID {
     FOUL_FLESH,
     CATALYST,
     HYPER_CATALYST,
-    //Candies
+    //Spooky
     GREEN_CANDY,
     PURPLE_CANDY,
+    ECTOPLASM,
+    PUMPKIN_GUTS,
+    SPOOKY_SHARD,
+    WEREWOLF_SKIN,
+    SOUL_FRAGMENT,
     //Gifts
     WHITE_GIFT,
     GREEN_GIFT,
