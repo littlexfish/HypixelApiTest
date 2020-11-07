@@ -17,8 +17,8 @@ public class Products {
      * @param product - {@link com.google.gson.JsonObject}
      */
     public Products(JsonObject product) {
-        products = new HashMap<>(product.size());
-        for(int i = 0;i < product.size();i++) {
+        products = new HashMap<>(ItemID.values().length);
+        for(int i = 0;i < ItemID.values().length;i++) {
             ItemID id = ItemID.values()[i];
             products.put(id, new ProductElement(product.get(id.getID()).getAsJsonObject()));
         }
